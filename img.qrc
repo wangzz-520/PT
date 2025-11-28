@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/USB_error.png</file>
+        <file>image/USB_fill.png</file>
+        <file>image/USB-nofill.png</file>
+        <file>image/map.png</file>
+        <file>image/overview.png</file>
+        <file>image/query.png</file>
+        <file>image/setting.png</file>
+        <file>image/track.png</file>
+        <file>image/close.png</file>
+        <file>image/Logo_bar.png</file>
+        <file>image/max.png</file>
+        <file>image/min.png</file>
+    </qresource>
+</RCC>
