@@ -1,11 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "tipitem.h"
+#include "tipwidget.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    m_tipWidget = new TipWidget("",this);
 
     ui->usbBtn->setConnected(false,"USB未连接");
 
@@ -24,6 +28,10 @@ MainWindow::MainWindow(QWidget *parent) :
     m_lstWidget<<ui->widgetOverView<<ui->widgetMap<<ui->widgetTrack<<ui->widgetSetting;
 
     ui->widget->setSignalLevel(SignalStrengthWidget::Level1);
+
+    TipItem::TipInfo info = TipItem::TipInfo(true,"1234",true,"123214");
+    ui->widget_2->setInfo(info);
+    connect(ui->widget_2,&TipItem::sigShowText,this,&MainWindow::slotShowTips);
 }
 
 MainWindow::~MainWindow()
@@ -40,4 +48,10 @@ void MainWindow::slotMenuClicked()
 
     MenuItem* item = qobject_cast<MenuItem*>(sender());
     item->setSelect(true);
+}
+
+void MainWindow::slotShowTips(const QString &tipText, QPoint pos)
+{
+    m_tipWidget->setPopupPos(tipText,pos);
+    m_tipWidget->show();
 }

@@ -17,9 +17,18 @@ void SignalStrengthWidget::setSignalLevel(SignalLevel level)
     }
 }
 
+void SignalStrengthWidget::setShowSignal(bool isShow)
+{
+    m_isShowSignal = isShow;
+}
+
 void SignalStrengthWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
+
+    if(!m_isShowSignal)
+        return;
+
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing); // 抗锯齿
 

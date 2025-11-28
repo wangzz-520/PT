@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui serialport network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,14 +29,25 @@ SOURCES += \
     menuitem.cpp \
     usbbutton.cpp \
     signalstrengthwidget.cpp \
-    tipitem.cpp
+    tipitem.cpp \
+    tipwidget.cpp \
+    wserialworker.cpp \
+    WLog.cpp \
+    UdpServer.cpp \
+    UdpDataWorkThread.cpp
 
 HEADERS += \
         mainwindow.h \
     menuitem.h \
     usbbutton.h \
     signalstrengthwidget.h \
-    tipitem.h
+    tipitem.h \
+    tipwidget.h \
+    wserialworker.h \
+    global.h \
+    WLog.h \
+    UdpServer.h \
+    UdpDataWorkThread.h
 
 FORMS += \
         mainwindow.ui \
@@ -46,3 +57,10 @@ FORMS += \
 
 RESOURCES += \
     img.qrc
+
+INCLUDEPATH += $$PWD/3rd/x86/spdlog/include
+
+win32:LIBPATH += $$PWD/3rd/x86/spdlog/lib
+
+LIBS += -lspdlog
+DESTDIR += ../Out

@@ -663,6 +663,28 @@ QStatusBar#statusBar
              </rect>
             </property>
            </widget>
+           <widget class="TipItem" name="widget_2" native="true">
+            <property name="geometry">
+             <rect>
+              <x>80</x>
+              <y>300</y>
+              <width>271</width>
+              <height>60</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>60</height>
+             </size>
+            </property>
+           </widget>
           </widget>
          </item>
         </layout>
@@ -677,6 +699,12 @@ QStatusBar#statusBar
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
+   <class>SignalStrengthWidget</class>
+   <extends>QWidget</extends>
+   <header>signalstrengthwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>MenuItem</class>
    <extends>QWidget</extends>
    <header>menuitem.h</header>
@@ -689,9 +717,9 @@ QStatusBar#statusBar
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>SignalStrengthWidget</class>
+   <class>TipItem</class>
    <extends>QWidget</extends>
-   <header>signalstrengthwidget.h</header>
+   <header>tipitem.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
