@@ -34,7 +34,11 @@ SOURCES += \
     wserialworker.cpp \
     WLog.cpp \
     UdpServer.cpp \
-    UdpDataWorkThread.cpp
+    UdpDataWorkThread.cpp \
+    overviewwidget.cpp \
+    mapwidget.cpp \
+    trackwidget.cpp \
+    advancedsettingswidget.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -47,13 +51,21 @@ HEADERS += \
     global.h \
     WLog.h \
     UdpServer.h \
-    UdpDataWorkThread.h
+    UdpDataWorkThread.h \
+    overviewwidget.h \
+    mapwidget.h \
+    trackwidget.h \
+    advancedsettingswidget.h
 
 FORMS += \
         mainwindow.ui \
     menuitem.ui \
     usbbutton.ui \
-    tipitem.ui
+    tipitem.ui \
+    overviewwidget.ui \
+    mapwidget.ui \
+    trackwidget.ui \
+    advancedsettingswidget.ui
 
 RESOURCES += \
     img.qrc
