@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "tipitem.h"
 #include "tipwidget.h"
+#include <Eigen/Core>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -27,11 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     m_lstWidget<<ui->widgetOverView<<ui->widgetMap<<ui->widgetTrack<<ui->widgetSetting;
 
-    ui->widget->setSignalLevel(SignalStrengthWidget::Level1);
-
-    TipItem::TipInfo info = TipItem::TipInfo(true,"1234",true,"123214");
-    ui->widget_2->setInfo(info);
-    connect(ui->widget_2,&TipItem::sigShowText,this,&MainWindow::slotShowTips);
+    Eigen::Matrix2d mat;
+    mat << 1, 2, 3, 4;
 }
 
 MainWindow::~MainWindow()

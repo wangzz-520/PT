@@ -70,9 +70,11 @@ FORMS += \
 RESOURCES += \
     img.qrc
 
-INCLUDEPATH += $$PWD/3rd/x86/spdlog/include
+INCLUDEPATH += $$PWD/3rd/spdlog/include \
+               $$PWD/3rd/Eigen3/include/eigen3
 
-win32:LIBPATH += $$PWD/3rd/x86/spdlog/lib
+win32:LIBPATH += $$PWD/3rd/spdlog/lib \
+                 $$PWD/3rd/Eigen3/lib
 
-LIBS += -lspdlog
+LIBS += -lspdlog -leigen_blas.dll -leigen_lapack.dll
 DESTDIR += ../Out

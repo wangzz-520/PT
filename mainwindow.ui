@@ -653,38 +653,6 @@ QStatusBar#statusBar
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <widget class="SignalStrengthWidget" name="widget" native="true">
-            <property name="geometry">
-             <rect>
-              <x>180</x>
-              <y>110</y>
-              <width>161</width>
-              <height>81</height>
-             </rect>
-            </property>
-           </widget>
-           <widget class="TipItem" name="widget_2" native="true">
-            <property name="geometry">
-             <rect>
-              <x>80</x>
-              <y>300</y>
-              <width>271</width>
-              <height>60</height>
-             </rect>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>60</height>
-             </size>
-            </property>
-           </widget>
           </widget>
          </item>
         </layout>
@@ -699,12 +667,6 @@ QStatusBar#statusBar
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>SignalStrengthWidget</class>
-   <extends>QWidget</extends>
-   <header>signalstrengthwidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>MenuItem</class>
    <extends>QWidget</extends>
    <header>menuitem.h</header>
@@ -714,12 +676,6 @@ QStatusBar#statusBar
    <class>UsbButton</class>
    <extends>QWidget</extends>
    <header>usbbutton.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>TipItem</class>
-   <extends>QWidget</extends>
-   <header>tipitem.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
