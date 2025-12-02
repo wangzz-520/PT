@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    this->setWindowFlag(Qt::FramelessWindowHint);
+
     m_tipWidget = new TipWidget("",this);
 
     ui->usbBtn->setConnected(false,"USB未连接");
@@ -27,9 +29,6 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->widgetSetting,&MenuItem::clicked,this,&MainWindow::slotMenuClicked);
 
     m_lstWidget<<ui->widgetOverView<<ui->widgetMap<<ui->widgetTrack<<ui->widgetSetting;
-
-    Eigen::Matrix2d mat;
-    mat << 1, 2, 3, 4;
 }
 
 MainWindow::~MainWindow()
@@ -46,10 +45,52 @@ void MainWindow::slotMenuClicked()
 
     MenuItem* item = qobject_cast<MenuItem*>(sender());
     item->setSelect(true);
+
+    if(item == ui->widgetOverView)
+    {
+        ui->frameVideo->show();
+        ui->stackedWidget->setCurrentWidget(ui->pageOverView);
+    }
+    else if(item == ui->widgetMap)
+    {
+        ui->frameVideo->show();
+        ui->stackedWidget->setCurrentWidget(ui->pageMap);
+    }
+    else if(item == ui->widgetTrack)
+    {
+        ui->frameVideo->hide();
+        ui->stackedWidget->setCurrentWidget(ui->pageTrack);
+    }
+    else if(item == ui->widgetSetting)
+    {
+        ui->frameVideo->hide();
+        ui->stackedWidget->setCurrentWidget(ui->pageAdvanced);
+    }
+
 }
 
 void MainWindow::slotShowTips(const QString &tipText, QPoint pos)
 {
     m_tipWidget->setPopupPos(tipText,pos);
     m_tipWidget->show();
+}
+
+void MainWindow::on_btnMin_clicked()
+{
+    this->showMinimized();
+}
+
+void MainWindow::on_btnMax_clicked()
+{
+    if(m_isShowNormal)
+        this->showMaximized();
+    else
+        this->showNormal();
+
+    m_isShowNormal = !m_isShowNormal;
+}
+
+void MainWindow::on_btnClose_clicked()
+{
+    qApp->exit();
 }

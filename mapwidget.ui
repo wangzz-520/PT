@@ -93,16 +93,16 @@
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_5">
-             <property name="text">
-              <string>100</string>
+            <widget class="QSlider" name="horizontalSlider_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QSlider" name="horizontalSlider_2">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>100</string>
              </property>
             </widget>
            </item>
