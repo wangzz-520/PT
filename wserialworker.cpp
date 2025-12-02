@@ -2,7 +2,7 @@
 #include "WLog.h"
 #include <QDebug>
 
-WSerialWorker::WSerialWorker(Global::SerialType type,QObject *parent)
+WSerialWorker::WSerialWorker(SerialType type,QObject *parent)
     : QObject(parent)
     , m_type(type)
 {
@@ -106,11 +106,11 @@ void WSerialWorker::processData(const QByteArray &data)
 {
     m_array.append(data);
 
-    if(m_type == Global::EnumStA0188)
+    if(m_type == EnumStA0188)
     {
 
     }
-    else if(m_type == Global::EnumStGenlock)
+    else if(m_type == EnumStGenlock)
     {
 //        if(m_array.size() < sizeof(Protocol::Cloud2Ret))
 //        {
@@ -138,9 +138,9 @@ QString WSerialWorker::getSerialNameByType()
 {
     switch(m_type)
     {
-    case Global::EnumStA0188: //主控箱
+    case EnumStA0188: //主控箱
         return "A0188模组";
-    case Global::EnumStGenlock:   //遥控箱
+    case EnumStGenlock:   //遥控箱
         return "Genlock";
     default:
         return "未知串口";

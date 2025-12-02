@@ -38,7 +38,11 @@ SOURCES += \
     overviewwidget.cpp \
     mapwidget.cpp \
     trackwidget.cpp \
-    advancedsettingswidget.cpp
+    advancedsettingswidget.cpp \
+    algorithm/OneEuroFilter.cpp \
+    algorithm/MotionDetectionModule.cpp \
+    algorithm/MountingAngleCalibrator.cpp \
+    algorithm/StabilizationAlgorithmModule.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -55,7 +59,11 @@ HEADERS += \
     overviewwidget.h \
     mapwidget.h \
     trackwidget.h \
-    advancedsettingswidget.h
+    advancedsettingswidget.h \
+    algorithm/OneEuroFilter.h \
+    algorithm/MotionDetectionModule.h \
+    algorithm/MountingAngleCalibrator.h \
+    algorithm/StabilizationAlgorithmModule.h
 
 FORMS += \
         mainwindow.ui \

@@ -9,7 +9,7 @@ class WSerialWorker : public QObject
 {
     Q_OBJECT
 public:
-    explicit WSerialWorker(Global::SerialType type,QObject *parent = nullptr);
+    explicit WSerialWorker(SerialType type,QObject *parent = nullptr);
      ~WSerialWorker();
 
 signals:
@@ -42,7 +42,7 @@ private:
 
 private:
     QSerialPort *m_serialPort = nullptr;
-    Global::SerialType m_type;
+    SerialType m_type;
 
     QByteArray m_array;
 };
