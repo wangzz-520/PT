@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui serialport network
+QT       += core gui serialport network serialbus
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -42,7 +42,8 @@ SOURCES += \
     algorithm/OneEuroFilter.cpp \
     algorithm/MotionDetectionModule.cpp \
     algorithm/MountingAngleCalibrator.cpp \
-    algorithm/StabilizationAlgorithmModule.cpp
+    algorithm/StabilizationAlgorithmModule.cpp \
+    qtmodbusrtu.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -64,7 +65,8 @@ HEADERS += \
     algorithm/MotionDetectionModule.h \
     algorithm/MountingAngleCalibrator.h \
     algorithm/StabilizationAlgorithmModule.h \
-    protocoldefine.h
+    protocoldefine.h \
+    qtmodbusrtu.h
 
 FORMS += \
         mainwindow.ui \
