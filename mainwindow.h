@@ -18,6 +18,11 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+protected:
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+
 private slots:
     void slotMenuClicked();
 
@@ -38,6 +43,9 @@ private:
     TipWidget *m_tipWidget = nullptr;
 
     bool m_isShowNormal = true;
+
+    bool m_bMousePress = false;         //标记鼠标状态：按下；未按下
+    QPoint m_Move_point;                //标记鼠标移动距离
 };
 
 #endif // MAINWINDOW_H

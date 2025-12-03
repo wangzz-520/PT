@@ -63,7 +63,8 @@ HEADERS += \
     algorithm/OneEuroFilter.h \
     algorithm/MotionDetectionModule.h \
     algorithm/MountingAngleCalibrator.h \
-    algorithm/StabilizationAlgorithmModule.h
+    algorithm/StabilizationAlgorithmModule.h \
+    protocoldefine.h
 
 FORMS += \
         mainwindow.ui \

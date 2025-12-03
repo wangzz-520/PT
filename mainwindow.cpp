@@ -36,6 +36,42 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::RightButton)
+    {
+        m_bMousePress = false;
+        return QWidget::mousePressEvent(event);
+    }
+    else if (event->button() == Qt::LeftButton)
+    {
+        // 只有在标题栏区域内按下鼠标左键才可以进行拖动操作
+        if (ui->frameTitle->geometry().contains(event->pos()))
+        {
+            m_bMousePress = true;
+
+        }
+    }
+    m_Move_point = event->globalPos() - pos();
+    return QWidget::mousePressEvent(event);
+}
+
+void MainWindow::mouseReleaseEvent(QMouseEvent *event)
+{
+    m_bMousePress = false;
+    return QWidget::mouseReleaseEvent(event);
+}
+
+void MainWindow::mouseMoveEvent(QMouseEvent *event)
+{
+    if (m_bMousePress)
+    {
+        QPoint move_pos = event->globalPos();
+        move(move_pos - m_Move_point);
+    }
+    return QWidget::mouseMoveEvent(event);
+}
+
 void MainWindow::slotMenuClicked()
 {
     for(int i=0;i<m_lstWidget.size();i++)
