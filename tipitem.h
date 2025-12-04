@@ -2,13 +2,11 @@
 #define TIPITEM_H
 
 #include <QWidget>
+#include "signalstrengthwidget.h"
 
 namespace Ui {
 class TipItem;
 }
-
-
-class TipWidget;
 
 class TipItem : public QWidget
 {
@@ -33,6 +31,8 @@ public:
     };
 
     void setInfo(TipInfo info);
+
+    void setSignalLevel(SignalLevel level);
 
 signals:
     void sigShowText(QString text,QPoint pos);

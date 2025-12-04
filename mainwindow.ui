@@ -61,7 +61,7 @@ QLabel#lbPicLeft,#lbPicRight
 	border-image: url(:/image/noPic.png);
 }
 
-QLabel#lbHour,#lbMin,#lbSec,#lbFrame,#label_10,#label_11,#label_12
+QLabel#lbHour,#lbMin,#lbSec,#lbFrame,#lbColon1,#lbColon2,#lbColon3
 {
 	font: bold 30px;
 }
@@ -221,7 +221,7 @@ QStatusBar#statusBar
                <item>
                 <widget class="QLabel" name="lbHour">
                  <property name="text">
-                  <string>18</string>
+                  <string>00</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>
@@ -249,7 +249,7 @@ QStatusBar#statusBar
                 </spacer>
                </item>
                <item>
-                <widget class="QLabel" name="label_10">
+                <widget class="QLabel" name="lbColon1">
                  <property name="maximumSize">
                   <size>
                    <width>10</width>
@@ -292,7 +292,7 @@ QStatusBar#statusBar
                   </font>
                  </property>
                  <property name="text">
-                  <string>12</string>
+                  <string>00</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>
@@ -320,7 +320,7 @@ QStatusBar#statusBar
                 </spacer>
                </item>
                <item>
-                <widget class="QLabel" name="label_12">
+                <widget class="QLabel" name="lbColon2">
                  <property name="maximumSize">
                   <size>
                    <width>10</width>
@@ -355,7 +355,7 @@ QStatusBar#statusBar
                <item>
                 <widget class="QLabel" name="lbSec">
                  <property name="text">
-                  <string>20</string>
+                  <string>00</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>
@@ -383,7 +383,7 @@ QStatusBar#statusBar
                 </spacer>
                </item>
                <item>
-                <widget class="QLabel" name="label_11">
+                <widget class="QLabel" name="lbColon3">
                  <property name="maximumSize">
                   <size>
                    <width>10</width>
@@ -418,7 +418,7 @@ QStatusBar#statusBar
                <item>
                 <widget class="QLabel" name="lbFrame">
                  <property name="text">
-                  <string>05</string>
+                  <string>00</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>

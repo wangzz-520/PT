@@ -23,6 +23,11 @@ void TipItem::setInfo(TipInfo info)
     ui->lbText->setText(info.text);
 }
 
+void TipItem::setSignalLevel(SignalLevel level)
+{
+    ui->widget->setSignalLevel(level);
+}
+
 void TipItem::on_btnQuestion_clicked()
 {
     QPoint btnGlobalPos = ui->btnQuestion->mapToGlobal(QPoint(0, 0));

@@ -21,6 +21,15 @@ enum MotionState {
     DYNAMIC   // 剧烈运动状态
 };
 
+// 信号强度级别（0=无信号，4=满信号）
+enum SignalLevel {
+    Level0 = 0,
+    Level1 = 1,
+    Level2 = 2,
+    Level3 = 3,
+    Level4 = 4,
+    Level5 = 5
+};
 
 //PairedFrame（包含position, rotation, IMU data, confidence, mode）
 struct PairedFrame {
@@ -46,6 +55,25 @@ struct StabilizedFrame {
     // ... 其他字段见标准定义
 };
 
+//首页展示数据
+struct OverviewInfo
+{
+    QString protocal;       //协议类型 FreeD/
+    QString freq;           //发送频率 60Hz
+    QString dstIp;          //目标IP
+    QString dstPort;        //目标端口
+    QString dstId;          //目标相机ID
+    QString encodeZoom;     //编码器Zoom
+    QString encodeFocus = "N/A"; //编码器Focus
+};
 
+
+struct PcInfo
+{
+    QString cpu;
+    QString temp;
+    QString mem;
+    QString Ip;
+};
 
 #endif // GLOBAL_H

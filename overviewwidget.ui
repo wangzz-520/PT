@@ -6,12 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>471</width>
-    <height>236</height>
+    <width>545</width>
+    <height>276</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*
+{
+    font-size: 14px;
+    color: rgb(68, 68, 68); /* 主文字色 */
+}
+
+QLabel#lbText1,#lbText2,#lbText3,#lbText4
+{
+	font: bold 18px;
+}</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_23" stretch="1,1">
    <item>
@@ -46,7 +58,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_14">
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="lbText1">
          <property name="text">
           <string>发送</string>
          </property>
@@ -69,21 +81,40 @@
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_15">
+       <property name="spacing">
+        <number>15</number>
+       </property>
+       <property name="leftMargin">
+        <number>40</number>
+       </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QLabel" name="label_2">
+          <widget class="QLabel" name="lbText5">
            <property name="text">
             <string>协议:</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_3">
+          <widget class="QLabel" name="lbProtocalType">
            <property name="text">
             <string>FreeD</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_16">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -97,11 +128,24 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_4">
+          <widget class="QLabel" name="lbFreq">
            <property name="text">
             <string>60Hz</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_17">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -110,7 +154,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_16">
        <item>
-        <widget class="QLabel" name="label_6">
+        <widget class="QLabel" name="lbText2">
          <property name="text">
           <string>目标IP</string>
          </property>
@@ -133,6 +177,12 @@
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_17">
+       <property name="spacing">
+        <number>15</number>
+       </property>
+       <property name="leftMargin">
+        <number>40</number>
+       </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
@@ -143,11 +193,24 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_8">
+          <widget class="QLabel" name="lbDstIp">
            <property name="text">
             <string>192.168.0.2</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_11">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -161,11 +224,24 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_10">
+          <widget class="QLabel" name="lbDstPort">
            <property name="text">
             <string>40000</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_12">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -179,11 +255,24 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_12">
+          <widget class="QLabel" name="lbCameraID">
            <property name="text">
             <string>1</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_13">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -192,7 +281,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_18">
        <item>
-        <widget class="QLabel" name="label_13">
+        <widget class="QLabel" name="lbText4">
          <property name="text">
           <string>三维坐标</string>
          </property>
@@ -215,6 +304,12 @@
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_19">
+       <property name="spacing">
+        <number>15</number>
+       </property>
+       <property name="leftMargin">
+        <number>40</number>
+       </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
@@ -225,11 +320,24 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_15">
+          <widget class="QLabel" name="lbX">
            <property name="text">
             <string>12.054</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -243,11 +351,24 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_17">
+          <widget class="QLabel" name="lbY">
            <property name="text">
             <string>0.111</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -261,11 +382,24 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_19">
+          <widget class="QLabel" name="lbZ">
            <property name="text">
             <string>3.271</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -273,6 +407,12 @@
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_20">
+       <property name="spacing">
+        <number>15</number>
+       </property>
+       <property name="leftMargin">
+        <number>40</number>
+       </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_9">
          <item>
@@ -283,11 +423,24 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_21">
+          <widget class="QLabel" name="lbP">
            <property name="text">
             <string>60.251</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_8">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -301,11 +454,24 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_23">
+          <widget class="QLabel" name="lbT">
            <property name="text">
             <string>91.601</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_9">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -319,11 +485,24 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_25">
+          <widget class="QLabel" name="lbR">
            <property name="text">
             <string>61.214</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_10">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -332,7 +511,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_21">
        <item>
-        <widget class="QLabel" name="label_26">
+        <widget class="QLabel" name="lbText3">
          <property name="text">
           <string>编码器</string>
          </property>
@@ -355,6 +534,9 @@
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_22">
+       <property name="leftMargin">
+        <number>40</number>
+       </property>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_12">
          <item>
@@ -365,11 +547,24 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_28">
+          <widget class="QLabel" name="lbZoom">
            <property name="text">
             <string>65535</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_14">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -383,11 +578,24 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_30">
+          <widget class="QLabel" name="lbFocus">
            <property name="text">
             <string>N/A</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_15">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
