@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "tipitem.h"
 #include "tipwidget.h"
+#include "grayimageglwidget.h"
+#include "customplot.h"
 #include <Eigen/Core>
 #include <QHBoxLayout>
 
@@ -13,13 +15,25 @@ MainWindow::MainWindow(QWidget *parent) :
 
     initUi();
 
+    m_customPlot = new CustomPlot(this);
+    m_glWidget = new GrayImageGLWidget(this);
+    m_brightnessPlot = new CustomPlot(this);
+
     m_tipWidget = new TipWidget("",this);
+
+    ui->widgetLeftLayout->addWidget(m_customPlot);
+    ui->widgetRightUpLayout->addWidget(m_glWidget);
+    ui->widgetRightDownLayout->addWidget(m_brightnessPlot);
 
     connect(ui->widgetOverView,&MenuItem::clicked,this,&MainWindow::slotMenuClicked);
     connect(ui->widgetMap,&MenuItem::clicked,this,&MainWindow::slotMenuClicked);
     connect(ui->widgetTrack,&MenuItem::clicked,this,&MainWindow::slotMenuClicked);
     connect(ui->widgetSetting,&MenuItem::clicked,this,&MainWindow::slotMenuClicked);
     connect(ui->pageOverView,&OverviewWidget::sigShowText,this,&MainWindow::slotShowTips);
+
+    QTimer::singleShot(2000,this,[=]{
+        m_glWidget->loadGrayImage(QImage(":/image/noPic.png"));
+    });
 }
 
 MainWindow::~MainWindow()
@@ -48,7 +62,6 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
         if (ui->frameTitle->geometry().contains(event->pos()))
         {
             m_bMousePress = true;
-
         }
     }
     m_Move_point = event->globalPos() - pos();
@@ -171,12 +184,24 @@ void MainWindow::slotMenuClicked()
     if(item == ui->widgetOverView)
     {
         ui->frameVideo->show();
-        ui->stackedWidget->setCurrentWidget(ui->pageOverView);
+        ui->stackedWidget->setCurrentWidget(ui->pageOverView); 
+
+        ui->widgetRightUpLayout->addWidget(m_glWidget);
+        m_customPlot->show();
+        ui->widgetRightUp->show();
+        ui->videoLayout->setStretch(0,2);
+        ui->videoLayout->setStretch(1,1);
     }
     else if(item == ui->widgetMap)
     {
         ui->frameVideo->show();
         ui->stackedWidget->setCurrentWidget(ui->pageMap);
+        ui->widgetLeftLayout->addWidget(m_glWidget);
+
+        m_customPlot->hide();
+        ui->widgetRightUp->hide();
+        ui->videoLayout->setStretch(0,1);
+        ui->videoLayout->setStretch(1,1);
     }
     else if(item == ui->widgetTrack)
     {

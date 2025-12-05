@@ -9,8 +9,11 @@
 namespace Ui {
 class MainWindow;
 }
+
 class TipWidget;
 class MenuItem;
+class GrayImageGLWidget;
+class CustomPlot;
 
 class MainWindow : public QMainWindow
 {
@@ -64,6 +67,10 @@ private:
 
     QWidget *m_statusWidget = nullptr;
     QWidget *m_infoWidget = nullptr;
+
+    CustomPlot *m_customPlot = nullptr;
+    GrayImageGLWidget *m_glWidget = nullptr;
+    CustomPlot *m_brightnessPlot = nullptr;
 };
 
 #endif // MAINWINDOW_H

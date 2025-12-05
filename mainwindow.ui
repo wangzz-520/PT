@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1104</width>
-    <height>642</height>
+    <width>1150</width>
+    <height>797</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -54,11 +54,6 @@ QLabel#lbLogo
 {
 	background: rgb(15,15,15);
 	border-image: url(:/image/Logo_bar.png);
-}
-
-QLabel#lbPicLeft,#lbPicRight
-{
-	border-image: url(:/image/noPic.png);
 }
 
 QLabel#lbHour,#lbMin,#lbSec,#lbFrame,#lbColon1,#lbColon2,#lbColon3
@@ -683,7 +678,7 @@ QStatusBar#statusBar
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
               </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <layout class="QHBoxLayout" name="videoLayout" stretch="2,1">
                <property name="spacing">
                 <number>20</number>
                </property>
@@ -700,18 +695,74 @@ QStatusBar#statusBar
                 <number>20</number>
                </property>
                <item>
-                <widget class="QLabel" name="lbPicLeft">
-                 <property name="text">
-                  <string/>
-                 </property>
+                <widget class="QWidget" name="widgetLeft" native="true">
+                 <layout class="QVBoxLayout" name="widgetLeftLayout">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                 </layout>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="lbPicRight">
-                 <property name="text">
-                  <string/>
+                <layout class="QVBoxLayout" name="verticalLayout_13">
+                 <property name="spacing">
+                  <number>0</number>
                  </property>
-                </widget>
+                 <item>
+                  <widget class="QWidget" name="widgetRightUp" native="true">
+                   <layout class="QVBoxLayout" name="widgetRightUpLayout">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widgetRightDown" native="true">
+                   <layout class="QVBoxLayout" name="widgetRightDownLayout">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
                </item>
               </layout>
              </widget>

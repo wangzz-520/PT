@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui serialport network serialbus
+QT       += core gui serialport network serialbus printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -43,7 +43,10 @@ SOURCES += \
     algorithm/MotionDetectionModule.cpp \
     algorithm/MountingAngleCalibrator.cpp \
     algorithm/StabilizationAlgorithmModule.cpp \
-    qtmodbusrtu.cpp
+    qtmodbusrtu.cpp \
+    grayimageglwidget.cpp \
+    customplot.cpp \
+    3rd/qcustomplot/qcustomplot.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -66,7 +69,10 @@ HEADERS += \
     algorithm/MountingAngleCalibrator.h \
     algorithm/StabilizationAlgorithmModule.h \
     protocoldefine.h \
-    qtmodbusrtu.h
+    qtmodbusrtu.h \
+    grayimageglwidget.h \
+    customplot.h \
+    3rd/qcustomplot/qcustomplot.h
 
 FORMS += \
         mainwindow.ui \
@@ -82,7 +88,8 @@ RESOURCES += \
     img.qrc
 
 INCLUDEPATH += $$PWD/3rd/spdlog/include \
-               $$PWD/3rd/Eigen3/include/eigen3
+               $$PWD/3rd/Eigen3/include/eigen3 \
+               $$PWD/3rd/qcustomplot
 
 win32:LIBPATH += $$PWD/3rd/spdlog/lib \
                  $$PWD/3rd/Eigen3/lib

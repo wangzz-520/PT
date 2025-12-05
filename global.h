@@ -37,9 +37,9 @@ struct PairedFrame {
     Eigen::Quaterniond rotation;        // 旋转 (输入WXYZ，内部XYZW)
     Eigen::Vector3d acceleration;       // 加速度 (m/s²)
     Eigen::Vector3d angular_velocity;   // 角速度 (rad/s)
-    int64_t timestamp_ns;              // 时间戳 (ns)
+    int64_t timestamp_ns;               // 时间戳 (ns)
     double confidence;                  // 置信度 (0.0-1.0)
-    //WorkMode work_mode;                 // 工作模式 (VIO/Map)
+    //WorkMode work_mode;               // 工作模式 (VIO/Map)
     // ... 其他字段见标准定义
 };
 
@@ -47,7 +47,7 @@ struct PairedFrame {
 struct StabilizedFrame {
     Eigen::Vector3d position;           // 增稳后的位置 (m)
     Eigen::Quaterniond rotation;        // 旋转（直接传递，不滤波）
-    int64_t timestamp_ns;              // 时间戳 (ns)
+    int64_t timestamp_ns;               // 时间戳 (ns)
     MotionState motion_state;           // 运动状态（STATIC/MOVING/DYNAMIC）
     Eigen::Vector3d acceleration;       // 加速度 (m/s²)
     Eigen::Vector3d angular_velocity;   // 角速度 (rad/s)
