@@ -15,6 +15,17 @@ public:
     explicit MapWidget(QWidget *parent = 0);
     ~MapWidget();
 
+private slots:
+    void on_btnLoadMap_clicked();
+
+    void on_btnNewMap_clicked();
+
+    void on_rbMap_toggled(bool checked);
+
+    void on_rbReal_toggled(bool checked);
+
+    void on_btnSetOri_clicked();
+
 private:
     Ui::MapWidget *ui;
 };

@@ -15,6 +15,9 @@ public:
     explicit TrackWidget(QWidget *parent = 0);
     ~TrackWidget();
 
+private slots:
+    void on_btnApply_clicked();
+
 private:
     Ui::TrackWidget *ui;
 };

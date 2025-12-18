@@ -6,18 +6,97 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>535</width>
-    <height>300</height>
+    <width>675</width>
+    <height>471</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">*
+{
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 16px;
+    color: rgb(30, 30, 30); /* 主文字色 */
+}
+
+QSlider::groove:horizontal {
+    height: 4px; /* 进度条高度 */
+    background: #f0f0f0; /* 未填充部分背景色 */
+}
+
+QSlider::sub-page:horizontal {
+    background: #409EFF; /* 已填充部分（蓝色） */
+    height: 4px;
+}
+
+QSlider::handle:horizontal {
+    width: 10px; /* 滑块宽度 */
+    height: 10px; /* 滑块高度 */
+    margin: -4px 0; /* 垂直居中（抵消进度条高度差） */
+    border: 2px solid #409EFF; /* 滑块边框（蓝色） */
+    border-radius: 6px; /* 圆形滑块 */
+    background: #ffffff; /* 滑块内部底色（白色=空心效果） */
+}
+
+QPushButton 
+{ 
+	background: #4a90e2; 
+	color: white; 
+	border: none;
+	border-radius: 5px;
+	padding: 8px;
+	font-weight: bold;
+}
+
+QPushButton:hover 
+{ 
+	background: #2b7bb9; 
+}
+
+QPushButton:pressed 
+{ 
+	background: #1a5a8a;
+}
+
+QLineEdit 
+{
+    background-color: #FFFFFF;
+    color: rgb(30, 30, 30);
+    border: 1px solid rgb(225, 230, 234);
+    border-radius: 5px;
+    padding: 5px 8px;  /* 比QComboBox稍宽的内边距 */
+    min-height: 15px;
+    selection-background-color: rgb(70, 130, 200);  /* 选中文本背景色 */
+    selection-color: white;  /* 选中文本颜色 */
+}
+
+/* 聚焦状态 */
+QLineEdit:focus {
+    background-color: #FFFFFF;  /* 保持白色背景 */
+}</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>15</number>
+   </property>
+   <property name="leftMargin">
+    <number>50</number>
+   </property>
+   <property name="topMargin">
+    <number>50</number>
+   </property>
+   <property name="rightMargin">
+    <number>50</number>
+   </property>
+   <property name="bottomMargin">
+    <number>50</number>
+   </property>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_7">
      <item>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="lbAdvacend1">
        <property name="text">
         <string>增稳</string>
        </property>
@@ -25,6 +104,9 @@
      </item>
      <item>
       <widget class="QSlider" name="horizontalSlider">
+       <property name="value">
+        <number>50</number>
+       </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -34,31 +116,34 @@
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_8">
+     <property name="leftMargin">
+      <number>30</number>
+     </property>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="lbAdvacend2">
          <property name="text">
           <string>增稳参数1</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="leStability1"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="lbAdvacend4_2">
          <property name="text">
           <string>增稳参数2</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="leStability2"/>
        </item>
       </layout>
      </item>
@@ -66,31 +151,34 @@
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <property name="leftMargin">
+      <number>30</number>
+     </property>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QLabel" name="label_4">
+        <widget class="QLabel" name="lbAdvacend3">
          <property name="text">
           <string>增稳参数3</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_3"/>
+        <widget class="QLineEdit" name="leStability3"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <widget class="QLabel" name="label_5">
+        <widget class="QLabel" name="lbAdvacend5">
          <property name="text">
           <string>增稳参数4</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_4"/>
+        <widget class="QLineEdit" name="leStability4"/>
        </item>
       </layout>
      </item>
@@ -98,31 +186,34 @@
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_10">
+     <property name="leftMargin">
+      <number>30</number>
+     </property>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
        <item>
-        <widget class="QLabel" name="label_6">
+        <widget class="QLabel" name="lbAdvacend4">
          <property name="text">
           <string>增稳参数5</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_5"/>
+        <widget class="QLineEdit" name="leStability5"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_6">
        <item>
-        <widget class="QLabel" name="label_7">
+        <widget class="QLabel" name="lbAdvacend6">
          <property name="text">
           <string>增稳参数6</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_6"/>
+        <widget class="QLineEdit" name="leStability6"/>
        </item>
       </layout>
      </item>
@@ -131,7 +222,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_15">
      <item>
-      <widget class="QLabel" name="label_8">
+      <widget class="QLabel" name="lbAdvacend10">
        <property name="text">
         <string>版本</string>
        </property>
@@ -154,8 +245,11 @@
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_12">
+     <property name="leftMargin">
+      <number>30</number>
+     </property>
      <item>
-      <widget class="QLabel" name="label_9">
+      <widget class="QLabel" name="lbAdvacend7">
        <property name="text">
         <string>硬件序列号:</string>
        </property>
@@ -164,16 +258,12 @@
      <item>
       <widget class="QLabel" name="label_10">
        <property name="text">
-        <string>-</string>
+        <string>v1.0.0</string>
        </property>
       </widget>
      </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_13">
      <item>
-      <widget class="QLabel" name="label_11">
+      <widget class="QLabel" name="lbAdvacend8">
        <property name="text">
         <string>软件版本号:</string>
        </property>
@@ -182,16 +272,12 @@
      <item>
       <widget class="QLabel" name="label_12">
        <property name="text">
-        <string>-</string>
+        <string>v1.0.0</string>
        </property>
       </widget>
      </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_14">
      <item>
-      <widget class="QLabel" name="label_13">
+      <widget class="QLabel" name="lbAdvacend9">
        <property name="text">
         <string>出厂日期:</string>
        </property>
@@ -200,11 +286,24 @@
      <item>
       <widget class="QLabel" name="label_14">
        <property name="text">
-        <string>-</string>
+        <string>2020.11.12</string>
        </property>
       </widget>
      </item>
     </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_11">
@@ -222,14 +321,26 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="btnReset">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string>重置</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="btnApply">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string>应用</string>
        </property>

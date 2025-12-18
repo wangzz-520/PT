@@ -16,8 +16,9 @@
   <property name="styleSheet">
    <string notr="true">*
 {
-    font-size: 14px;
-    color: rgb(68, 68, 68); /* 主文字色 */
+    font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 16px;
+    color: rgb(30, 30, 30); /* 主文字色 */
 }
 
 QLabel#lbText1,#lbText2,#lbText3,#lbText4

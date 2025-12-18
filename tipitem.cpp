@@ -21,6 +21,16 @@ void TipItem::setInfo(TipInfo info)
     ui->widget->setShowSignal(info.isShowSignal);
     ui->widget->setHidden(!info.isShowQuestion);
     ui->lbText->setText(info.text);
+
+    if(info.isShowSignal)
+    {
+        ui->widget->setFixedWidth(100);
+    }
+    else
+    {
+        ui->widget->setFixedWidth(1);
+    }
+
 }
 
 void TipItem::setSignalLevel(SignalLevel level)

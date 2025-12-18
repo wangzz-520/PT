@@ -15,6 +15,11 @@ public:
     explicit AdvancedSettingsWidget(QWidget *parent = 0);
     ~AdvancedSettingsWidget();
 
+private slots:
+    void on_btnReset_clicked();
+
+    void on_btnApply_clicked();
+
 private:
     Ui::AdvancedSettingsWidget *ui;
 };

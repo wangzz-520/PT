@@ -12,3 +12,8 @@ TrackWidget::~TrackWidget()
 {
     delete ui;
 }
+
+void TrackWidget::on_btnApply_clicked()
+{
+
+}

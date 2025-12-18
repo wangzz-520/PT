@@ -12,3 +12,13 @@ AdvancedSettingsWidget::~AdvancedSettingsWidget()
 {
     delete ui;
 }
+
+void AdvancedSettingsWidget::on_btnReset_clicked()
+{
+
+}
+
+void AdvancedSettingsWidget::on_btnApply_clicked()
+{
+
+}

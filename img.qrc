@@ -13,5 +13,9 @@
         <file>image/max.png</file>
         <file>image/min.png</file>
         <file>image/noPic.png</file>
+        <file>image/check.png</file>
+        <file>image/combobox-arrow.png</file>
+        <file>image/combobox-up.png</file>
+        <file>image/on.png</file>
     </qresource>
 </RCC>
