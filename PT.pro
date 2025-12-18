@@ -21,9 +21,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+msvc {
+    QMAKE_CFLAGS += /utf-8
+    QMAKE_CXXFLAGS += /utf-8
+}
 
 
 SOURCES += \
+    DataCollection/DataCollectionA1088.cpp \
+    DataCollection/DataCollectionDS80.cpp \
         main.cpp \
         mainwindow.cpp \
     menuitem.cpp \
@@ -49,6 +55,10 @@ SOURCES += \
     3rd/qcustomplot/qcustomplot.cpp
 
 HEADERS += \
+    DataCollection/DataCollectionA1088.h \
+    DataCollection/DataCollectionDS80.h \
+    DataCollection/DataCollectionFactory.h \
+    DataCollection/DataCollectionInterface.h \
         mainwindow.h \
     menuitem.h \
     usbbutton.h \
@@ -89,10 +99,15 @@ RESOURCES += \
 
 INCLUDEPATH += $$PWD/3rd/spdlog/include \
                $$PWD/3rd/Eigen3/include/eigen3 \
-               $$PWD/3rd/qcustomplot
+               $$PWD/3rd/qcustomplot \
+               $$PWD/3rd/xvsdk/include \
+               $$PWD/3rd/xvsdk/include/xvsdk \
+               $$PWD/3rd/xvsdk/include2 \
+               $$PWD/3rd/opencv/include
 
 win32:LIBPATH += $$PWD/3rd/spdlog/lib \
-                 $$PWD/3rd/Eigen3/lib
+                 $$PWD/3rd/xvsdk/lib \
+                 $$PWD/3rd/opencv/lib
 
-LIBS += -lspdlog -leigen_blas.dll -leigen_lapack.dll
+LIBS += -lspdlog -lxvsdk -lopencv_world480d
 DESTDIR += ../Out

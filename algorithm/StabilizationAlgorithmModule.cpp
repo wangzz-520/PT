@@ -61,8 +61,8 @@ StabilizedFrame StabilizationAlgorithmModule::stabilize(const PairedFrame& frame
 
     StabilizedFrame result;
     result.position = Eigen::Vector3d(filtered_x, filtered_y, filtered_z);
-    result.rotation = frame.rotation;
-    result.acceleration = frame.acceleration;
+    //result.rotation = frame.rotation;
+   // result.acceleration = frame.acceleration;
     result.angular_velocity = frame.angular_velocity;
     result.timestamp_ns = frame.timestamp_ns;
     result.confidence = frame.confidence;

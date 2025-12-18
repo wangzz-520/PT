@@ -15,6 +15,31 @@ enum SerialType
     EnumStGenlock
 };
 
+typedef enum class _ExposureMode
+{
+    AUTO,   // 自动曝光模式
+    MANUAL  // 手动曝光模式
+}ExposureMode;
+
+typedef enum class _LogLevel{
+    LogLevel_debug = 1,
+    LogLevel_info,
+    LogLevel_warn,
+    LogLevel_err,
+    LogLevel_critical,
+    LogLevel_off
+}LogLevel;
+
+typedef struct _MappingQuality
+{
+    double overall_score;      // 总体质量分数（0.0-1.0）
+    double confidence_avg;     // 平均置信度
+    double confidence_min;      // 最小置信度
+    double confidence_max;      // 最大置信度
+    double stability_score;    // 稳定性分数
+    int64_t analysis_duration; // 分析时长（纳秒）
+}MappingQuality;
+
 enum MotionState {
     STATIC,   // 静止状态
     MOVING,   // 运动状态
@@ -31,17 +56,45 @@ enum SignalLevel {
     Level5 = 5
 };
 
+typedef enum class _WorkMode
+{
+    VIO,           // VIO模式：实时SLAM位姿估计
+    MAP,           // 地图模式：基于预建地图定位
+    MAP_INIT_VIO   // 混合模式：初始使用地图获得坐标，然后切换到VIO模式
+}WorkMode;
+
+
 //PairedFrame（包含position, rotation, IMU data, confidence, mode）
-struct PairedFrame {
-    Eigen::Vector3d position;           // 位置 (m)
-    Eigen::Quaterniond rotation;        // 旋转 (输入WXYZ，内部XYZW)
-    Eigen::Vector3d acceleration;       // 加速度 (m/s²)
-    Eigen::Vector3d angular_velocity;   // 角速度 (rad/s)
-    int64_t timestamp_ns;               // 时间戳 (ns)
-    double confidence;                  // 置信度 (0.0-1.0)
-    //WorkMode work_mode;               // 工作模式 (VIO/Map)
-    // ... 其他字段见标准定义
-};
+//数据采集模块输出
+typedef struct _PairedFrame
+{
+    bool valid_frame;
+    // POSE数据
+    Eigen::Vector3d position;          // 位置 [x, y, z] (m)
+    Eigen::Quaterniond rotation;        // 旋转四元数 (输入WXYZ，内部XYZW，w≥0，已归一化)
+    Eigen::Vector3d linear_velocity;    // 线速度 [vx, vy, vz] (m/s)
+    Eigen::Vector3d angular_velocity;   // 角速度 [ωx, ωy, ωz] (rad/s)
+    int64_t timestamp_ns;               // POSE时间戳 (纳秒)
+    double confidence;                  // POSE置信度 (0.0-1.0)
+
+    // IMU数据
+    Eigen::Vector3d imu_angular_velocity;  // IMU角速度 [ωx, ωy, ωz] (rad/s)
+    Eigen::Vector3d imu_acceleration;       // IMU加速度 [ax, ay, az] (m/s²)
+    int64_t imu_timestamp_ns;              // IMU时间戳 (纳秒)
+
+    // 配对信息
+    double pair_delta_us;          // 配对时间差 (微秒)
+    double pair_quality;           // 配对质量 (0.0-1.0)
+
+    // 元数据
+    uint32_t frame_id;             // 帧序号
+    std::string source;            // 数据源标识（"DS80"或"A0188"）
+    WorkMode work_mode;            // 工作模式 (VIO/MAP/MAP_INIT_VIO)
+    bool map_loaded;               // 地图加载状态
+
+    // 第二期扩展
+    //std::optional<VideoFrame> video_frame;  // NDI视频帧（第二期）
+}PairedFrame;
 
 // 注意：这是简化版本，完整定义请参考总体文档
 struct StabilizedFrame {

@@ -17,7 +17,7 @@ MountingAngleCalibrator::MountingAngleCalibrator() {
 }
 
 void MountingAngleCalibrator::setConfig(const MountingAngleConfig& config) {
-    config_ = config;
+    //config_ = config;
     updateCalibrationQuat();
 }
 

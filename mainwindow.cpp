@@ -88,8 +88,10 @@ void MainWindow::mouseDoubleClickEvent(QMouseEvent *event)
 {
     if (ui->frameTitle->geometry().contains(event->pos()))
     {
-        if(m_isShowNormal)
+        if(m_isShowNormal){
             this->showMaximized();
+            this->move(0,0);
+        }
         else
             this->showNormal();
 

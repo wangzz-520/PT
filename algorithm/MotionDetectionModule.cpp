@@ -55,7 +55,7 @@ void MotionDetectionModule::reset() {
 }
 
 MotionState MotionDetectionModule::detectMotion(const PairedFrame& frame) {
-    Eigen::Vector3d acceleration = frame.acceleration;
+    Eigen::Vector3d acceleration/* = frame.acceleration*/;
     Eigen::Vector3d angular_velocity = frame.angular_velocity;
     int64_t timestamp = frame.timestamp_ns;
 
